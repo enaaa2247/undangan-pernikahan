@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="su">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>MISI RAHASIA</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: #0a0a0a;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+        text-align: center;
+        transition: 0.5s;
+      }
+      .card {
+        max-width: 400px;
+        width: 100%;
+      }
+      .hacker {
+        font-family: monospace;
+        background: #111;
+        border: 1px solid #00ff88;
+        padding: 30px;
+        border-radius: 10px;
+        color: #00ff88;
+      }
+      .lucu {
+        background: white;
+        color: #333;
+        padding: 30px;
+        border-radius: 20px;
+      }
+      .hidden {
+        display: none;
+      }
+      input,
+      textarea {
+        padding: 12px;
+        margin-top: 15px;
+        width: 85%;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        font-family: "Segoe UI", sans-serif;
+        font-size: 15px;
+      }
+      .hacker input {
+        background: #000;
+        border: 1px solid #00ff88;
+        color: #00ff88;
+        font-family: monospace;
+        text-align: center;
+      }
+      button {
+        padding: 12px 22px;
+        margin: 10px;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .btn-hacker {
+        background: #00ff88;
+        color: #000;
+        font-family: monospace;
+      }
+      #yes {
+        background: #a9dfbf;
+      }
+      #no {
+        background: #f5b7b1;
+        position: absolute;
+        transition: 0.2s;
+      }
+      .big {
+        font-size: 50px;
+      }
+      #typing {
+        min-height: 60px;
+        text-align: left;
+        font-size: 13px;
+      }
+      img.meme {
+        width: 100%;
+        border-radius: 12px;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body id="body">
+    <div class="card hacker" id="h1">
+      <div id="typing"></div>
+      <div id="formPw" class="hidden">
+        <p style="font-size: 13px">Hint: hampura</p>
+        <input id="pw" placeholder="kode akses..." />
+        <br /><button class="btn-hacker" onclick="bukaMisi()">
+          BOBOL YUU >>
+        </button>
+        <p id="err" style="color: red; font-size: 13px"></p>
+      </div>
+    </div>
+
+    <div class="card hacker hidden" id="h2">
+      <h3>>> AKSES DITERIMA <<</h3>
+      <p>Muka file dina...</p>
+      <h1 id="count" style="font-size: 50px">3</h1>
+    </div>
+
+    <div class="card lucu hidden" id="l1">
+      <div class="big">🥺</div>
+      <h2>lah kok jadi lucu?!</h2>
+      <img
+        class="meme"
+        src="https://media.giphy.com/media/l0HlQ7LRalQqdWfWM/giphy.gif"
+      />
+      <h3>masih ngambek,sakit hati keneh?</h3>
+      <div style="height: 90px; position: relative">
+        <button id="yes" onclick="luluh()">henteu</button>
+        <button id="no" onmouseover="kabur()" onclick="kabur()">
+          masih ambek!
+        </button>
+      </div>
+    </div>
+
+    <div class="card lucu hidden" id="l2">
+      <div class="big">😭🙏</div>
+      <div
+        style="
+          background: #fef9e7;
+          padding: 15px;
+          border-radius: 12px;
+          text-align: left;
+          font-size: 15px;
+          color: #333;
+        "
+      >
+        <b>jujur ieu mh ti kuring:</b><br />1. Kamari cuma
+        <b>heureuy hungkul</b>.<br />2. u malah nganggap serius.<br />3. abiteu
+        niat nganyeyeri jeng etmh cuma herey hungkl,tapi mlah dianggap serius
+        kpikiran nympe ka ayeuna,ktmbah teu enak hate.
+      </div>
+      <button id="yes" onclick="lanjut1()" style="margin-top: 15px">
+        baca suratna ->
+      </button>
+    </div>
+
+    <div class="card lucu hidden" id="l3">
+      <div class="big">💌</div>
+      <h3>surat ti i</h3>
+      <p style="text-align: left; line-height: 1.6; font-size: 15px">
+        jengjengjenng<br /><br />hampura pisan siah,lain mksd rek nganyenyeri
+        u,sing bnr nage etmh cuma herey hngkl,nya hmpura we heureuyna kelewatan.
+        Teu aya niat nyieun u nyeri hate. da sbnrnamh i mh teu tau nnaon,herey
+        etmh..ngan masalah na herey i mh sk siga nu nyaan ka sasaha ge.nya
+        hmpura we...,sakali deui maappinn.ga mau ngemaappin?ih allah juga maha
+        pemaafff<br /><br />- i -
+      </p>
+      <button id="yes" onclick="lanjut2()">terakhir nih, penting -></button>
+    </div>
+
+    <!-- BAGIAN BARU: TUNTUTAN -->
+    <div class="card lucu hidden" id="l4">
+      <div class="big">📝</div>
+      <h3>ayeuna giliran u</h3>
+      <p style="font-size: 14px; color: #555">
+        abi kudu kumaha sangkan u bener-bener ngahampura atw ek ktu wae?heuh<br /><br />Tulis
+        di handap, langsung kakirim ka WA abi:
+      </p>
+      <textarea
+        id="tuntutan"
+        rows="4"
+        placeholder="Contona: mau di traktir apa gitu, ulah heureuy kitu deui..."
+      ></textarea>
+      <br />
+      <button
+        onclick="kirimWa()"
+        style="background: #25d366; color: white; width: 90%"
+      >
+        kirim tuntutan ka abi 📩
+      </button>
+      <p style="font-size: 12px; color: #999; margin-top: 10px">
+        tenang, ieu langsung ka WA abi, rahasia.
+      </p>
+    </div>
+
+    <script>
+      let txt =
+        "> Menghubungkan ke server rasa bersalah...\n> Target: de nai\n> Status: NGAMBEEK parrwahhaaa";
+      let i = 0;
+      function type() {
+        if (i < txt.length) {
+          document.getElementById("typing").innerHTML +=
+            txt.charAt(i) == "\n" ? "<br>" : txt.charAt(i);
+          i++;
+          setTimeout(type, 30);
+        } else {
+          document.getElementById("formPw").classList.remove("hidden");
+        }
+      }
+      type();
+      function bukaMisi() {
+        if (
+          document.getElementById("pw").value.toLowerCase().trim() === "hampura"
+        ) {
+          document.getElementById("h1").classList.add("hidden");
+          document.getElementById("h2").classList.remove("hidden");
+          let c = 3;
+          let el = document.getElementById("count");
+          let iv = setInterval(() => {
+            c--;
+            if (c <= 0) {
+              clearInterval(iv);
+              document.getElementById("h2").classList.add("hidden");
+              document.getElementById("body").style.background = "#fef9e7";
+              document.getElementById("l1").classList.remove("hidden");
+            } else el.innerText = c;
+          }, 800);
+        } else document.getElementById("err").innerText = "KODE SALAH!";
+      }
+      function kabur() {
+        let b = document.getElementById("no");
+        b.style.left = Math.random() * 60 + "%";
+        b.style.top = Math.random() * 60 + "%";
+      }
+      function luluh() {
+        document.getElementById("l1").classList.add("hidden");
+        document.getElementById("l2").classList.remove("hidden");
+      }
+      function lanjut1() {
+        document.getElementById("l2").classList.add("hidden");
+        document.getElementById("l3").classList.remove("hidden");
+      }
+      function lanjut2() {
+        document.getElementById("l3").classList.add("hidden");
+        document.getElementById("l4").classList.remove("hidden");
+      }
+      function kirimWa() {
+        let isi = document.getElementById("tuntutan").value;
+        if (isi.trim() == "") {
+          alert("tulis heula atuh mauna u naon 😭");
+          return;
+        }
+        let nomorTeteh = "6281224820071"; // <-- GANTI NOMOR INI KU NOMOR TETEH
+        let pesan = encodeURIComponent(
+          "Teh, aku udah baca semuanya. Aku maafin kok, TAPI teteh harus: \n\n" +
+            isi +
+            "\n\nJangan diulangi ya!",
+        );
+        window.open("https://wa.me/" + nomorTeteh + "?text=" + pesan, "_blank");
+      }
+    </script>
+  </body>
+</html>
